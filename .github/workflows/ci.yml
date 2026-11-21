@@ -13,8 +13,8 @@ jobs:
         include:
           - target: release-0.1.24
             requirement: openminion==0.1.24
-          - target: dev-f7bc378e
-            requirement: git+https://github.com/openminion/openminion.git@f7bc378ec
+          - target: dev-d9973951
+            requirement: git+https://github.com/openminion/openminion.git@d99739514
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -34,7 +34,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: python -m pip install git+https://github.com/openminion/openminion.git@f7bc378ec
+      - run: python -m pip install git+https://github.com/openminion/openminion.git@d99739514
       - run: python -m pip install -e .
       - run: python -c "from openminion_app_template.domain import RequestStore; RequestStore('rollback.db').create('saved', 'keep this record')"
       - run: python -m pip install --force-reinstall openminion==0.1.24
